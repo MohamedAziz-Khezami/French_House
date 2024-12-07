@@ -1,0 +1,52 @@
+/* Responsive CSS for Dash components */
+
+@media only screen and (max-width: 600px) {
+    /* Stack components vertically */
+    .content {
+        flex-direction: column;
+    }
+
+    .content > div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-chart {
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    /* Ensure components are aligned horizontally */
+    .content {
+        flex-direction: row;
+    }
+
+    .content > div {
+        width: 50%;
+    }
+
+    .main-chart {
+        height: 500px;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1F2630;
+}
+
+button {
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+

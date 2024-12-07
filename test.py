@@ -1,3 +1,4 @@
+'''
 import dash
 import dash_leaflet as dl
 import json
@@ -8,7 +9,7 @@ from dash import Input, Output, html
 app = dash.Dash(__name__)
 
 # Load your GeoJSON file (replace with your file path)
-with open('database/geofrance.json') as f:
+with open('geofrance.json') as f:
     geojson_data = json.load(f)
 
 # Layout with a map and GeoJSON layer
@@ -20,8 +21,6 @@ app.layout = html.Div([
             id="geojson",
             data=geojson_data,
             hoverStyle={'fillColor': 'yellow', 'weight': 3},  # Highlight feature on hover
-            # Event handler for hover
-            on_hover={'target': 'geojson', 'action': 'hover'}
         ),
     ], style={'width': '70%', 'height': '800px'}),
     html.Div(id="hover-output")  # To display the feature properties on hover
@@ -41,3 +40,37 @@ def display_hover_info(hoverData):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+
+
+
+import pickle as pkl
+import pandas as pd
+with open('lgbm_model_250_mse.pkl', 'rb') as f:
+    model = pkl.load(f)
+
+
+
+df_pred = pd.DataFrame([["2.0", "2.0", "2.0", "2.0", "2.0"]], columns=['longitude', 'latitude', 'type_local', 'nombre_pieces_principales', 'surface'])
+
+
+print(model.predict(df_pred))
+
+'''
+
+
+
+import os
+import pickle
+
+scores = {} # scores is an empty dict already
+target = '/Users/mak/Desktop/French_House/lgbm_model_250_mse.pkl'
+if os.path.getsize(target) > 0:      
+    with open(target, "rb") as f:
+        unpickler = pickle.Unpickler(f)
+        # if file is not empty scores will be equal
+        # to the value unpickled
+        scores = unpickler.load()
+        
+        
+print(scores)
