@@ -301,7 +301,6 @@ app.layout = html.Div(
             ],
             style={"width": "100%", "margin": "auto", "backgroundColor": ""},
         ),
-        html.Hr(),
         html.Div(
             children=[
                 html.Div(
@@ -360,50 +359,50 @@ app.layout = html.Div(
                                         name="Valeur fonciere",
                                         yaxis="y1",  # Assign to the primary y-axis
                                     ),
-                                            go.Scatter(
-            x=maison_line["date_mutation"],
-            y=maison_line["count"],
-            mode="lines",
-            name="Number of sales",
-            yaxis="y2",  # Assign to the secondary y-axis
-        ),
+                                    go.Scatter(
+                                        x=maison_line["date_mutation"],
+                                        y=maison_line["count"],
+                                        mode="lines",
+                                        name="Number of sales",
+                                        yaxis="y2",  # Assign to the secondary y-axis
+                                    ),
                                 ],
                                 "layout": go.Layout(
                                     title={
                                         "text": "Average total selling price of houses per month",
                                         "font": {
                                             "color": "white",
-                                            "size": 40,
+                                            "size": 30,
                                         },  # Set title font color to white
                                     },
-                                     paper_bgcolor="#1F2630",
-        plot_bgcolor="#252E3F",
-        xaxis=dict(
-            title="Date mutation",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-        ),
-        yaxis=dict(
-            title="Valeur fonciere",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-        ),
-        yaxis2=dict(
-            title="Counts",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-            overlaying="y",  # Overlay on the same plot
-            side="right",  # Place on the right side
-        ),
+                                    paper_bgcolor="#1F2630",
+                                    plot_bgcolor="#252E3F",
+                                    xaxis=dict(
+                                        title="Date mutation",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                    ),
+                                    yaxis=dict(
+                                        title="Valeur fonciere",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                    ),
+                                    yaxis2=dict(
+                                        title="Counts",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                        overlaying="y",  # Overlay on the same plot
+                                        side="right",  # Place on the right side
+                                    ),
                                     # margin={"r": 0, "t": 0, "l": 0, "b": 0},
                                 ),
                             },
@@ -620,13 +619,13 @@ app.layout = html.Div(
                                         name="Valeur fonciere",
                                         yaxis="y1",  # Assign to the primary y-axis
                                     ),
-      go.Scatter(
-            x=appartement_line["date_mutation"],
-            y=appartement_line["count"],
-            mode="lines",
-            name="Number of sales",
-            yaxis="y2",  # Assign to the secondary y-axis
-        ),
+                                    go.Scatter(
+                                        x=appartement_line["date_mutation"],
+                                        y=appartement_line["count"],
+                                        mode="lines",
+                                        name="Number of sales",
+                                        yaxis="y2",  # Assign to the secondary y-axis
+                                    ),
                                 ],
                                 "layout": go.Layout(
                                     title={
@@ -636,34 +635,34 @@ app.layout = html.Div(
                                             "size": 40,
                                         },  # Set title font color to white
                                     },
-                                     paper_bgcolor="#1F2630",
-        plot_bgcolor="#252E3F",
-        xaxis=dict(
-            title="Date mutation",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-        ),
-        yaxis=dict(
-            title="Valeur fonciere",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-        ),
-        yaxis2=dict(
-            title="Counts",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-            overlaying="y",  # Overlay on the same plot
-            side="right",  # Place on the right side
-        ),
+                                    paper_bgcolor="#1F2630",
+                                    plot_bgcolor="#252E3F",
+                                    xaxis=dict(
+                                        title="Date mutation",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                    ),
+                                    yaxis=dict(
+                                        title="Valeur fonciere",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                    ),
+                                    yaxis2=dict(
+                                        title="Counts",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                        overlaying="y",  # Overlay on the same plot
+                                        side="right",  # Place on the right side
+                                    ),
                                     # margin={"r": 0, "t": 0, "l": 0, "b": 0},
                                 ),
                             },
@@ -879,13 +878,13 @@ app.layout = html.Div(
                                         mode="lines",
                                         name="Valeur fonciere",
                                     ),
-        go.Scatter(
-            x=appartement_line["date_mutation"],
-            y=appartement_line["count"],
-            mode="lines",
-            name="Number of sales",
-            yaxis="y2",  # Assign to the secondary y-axis
-        ),
+                                    go.Scatter(
+                                        x=appartement_line["date_mutation"],
+                                        y=appartement_line["count"],
+                                        mode="lines",
+                                        name="Number of sales",
+                                        yaxis="y2",  # Assign to the secondary y-axis
+                                    ),
                                 ],
                                 "layout": go.Layout(
                                     title={
@@ -895,34 +894,34 @@ app.layout = html.Div(
                                             "size": 40,
                                         },  # Set title font color to white
                                     },
-                                     paper_bgcolor="#1F2630",
-        plot_bgcolor="#252E3F",
-        xaxis=dict(
-            title="Date mutation",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-        ),
-        yaxis=dict(
-            title="Valeur fonciere",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-        ),
-        yaxis2=dict(
-            title="Counts",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
-            gridcolor="#444",
-            zerolinecolor="#444",
-            zeroline=False,
-            overlaying="y",  # Overlay on the same plot
-            side="right",  # Place on the right side
-        ),
+                                    paper_bgcolor="#1F2630",
+                                    plot_bgcolor="#252E3F",
+                                    xaxis=dict(
+                                        title="Date mutation",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                    ),
+                                    yaxis=dict(
+                                        title="Valeur fonciere",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                    ),
+                                    yaxis2=dict(
+                                        title="Counts",
+                                        titlefont=dict(color="white"),
+                                        tickfont=dict(color="white"),
+                                        gridcolor="#444",
+                                        zerolinecolor="#444",
+                                        zeroline=False,
+                                        overlaying="y",  # Overlay on the same plot
+                                        side="right",  # Place on the right side
+                                    ),
                                     # margin={"r": 0, "t": 0, "l": 0, "b": 0},
                                 ),
                             },
