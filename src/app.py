@@ -59,11 +59,19 @@ line_chart = {
             y=df["valeur_fonciere"],
             mode="lines",
             name="Valeur fonciere",
-        )
+            yaxis="y1",  # Assign to the primary y-axis
+        ),
+        go.Scatter(
+            x=df["date_mutation"],
+            y=df["count"],
+            mode="lines",
+            name="Number of sales",
+            yaxis="y2",  # Assign to the secondary y-axis
+        ),
     ],
     "layout": go.Layout(
         title={
-            "text": "Average total selling price per month",
+            "text": "Average total selling price and counts per month",
             "font": {"color": "white", "size": 50},  # Set title font color to white
         },
         paper_bgcolor="#1F2630",
@@ -74,7 +82,6 @@ line_chart = {
             tickfont=dict(color="white"),
             gridcolor="#444",
             zerolinecolor="#444",
-            zerolinewidth=500,
             zeroline=False,
         ),
         yaxis=dict(
@@ -83,12 +90,21 @@ line_chart = {
             tickfont=dict(color="white"),
             gridcolor="#444",
             zerolinecolor="#444",
-            zerolinewidth=500,
             zeroline=False,
         ),
-        # margin={"r": 0, "t": 0, "l": 0, "b": 0},
+        yaxis2=dict(
+            title="Counts",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+            overlaying="y",  # Overlay on the same plot
+            side="right",  # Place on the right side
+        ),
     ),
 }
+
 
 # pie chart: effects on price
 pie_chart = {
@@ -326,7 +342,7 @@ app.layout = html.Div(
         ),
         html.Hr(),
         html.H2(
-            "House prices evolution",
+            "House prices evolution:",
             style={"color": "white", "fontSize": "40px", "fontWeight": "bold"},
         ),
         html.Div(
@@ -342,7 +358,15 @@ app.layout = html.Div(
                                         y=maison_line["valeur_fonciere"],
                                         mode="lines",
                                         name="Valeur fonciere",
-                                    )
+                                        yaxis="y1",  # Assign to the primary y-axis
+                                    ),
+                                            go.Scatter(
+            x=maison_line["date_mutation"],
+            y=maison_line["count"],
+            mode="lines",
+            name="Number of sales",
+            yaxis="y2",  # Assign to the secondary y-axis
+        ),
                                 ],
                                 "layout": go.Layout(
                                     title={
@@ -352,26 +376,34 @@ app.layout = html.Div(
                                             "size": 40,
                                         },  # Set title font color to white
                                     },
-                                    paper_bgcolor="#1F2630",
-                                    plot_bgcolor="#252E3F",
-                                    xaxis=dict(
-                                        title="Date mutation",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
-                                        gridcolor="#444",
-                                        zerolinecolor="#444",
-                                        zerolinewidth=500,
-                                        zeroline=False,
-                                    ),
-                                    yaxis=dict(
-                                        title="Valeur fonciere",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
-                                        gridcolor="#444",
-                                        zerolinecolor="#444",
-                                        zerolinewidth=500,
-                                        zeroline=False,
-                                    ),
+                                     paper_bgcolor="#1F2630",
+        plot_bgcolor="#252E3F",
+        xaxis=dict(
+            title="Date mutation",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+        ),
+        yaxis=dict(
+            title="Valeur fonciere",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+        ),
+        yaxis2=dict(
+            title="Counts",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+            overlaying="y",  # Overlay on the same plot
+            side="right",  # Place on the right side
+        ),
                                     # margin={"r": 0, "t": 0, "l": 0, "b": 0},
                                 ),
                             },
@@ -570,7 +602,7 @@ app.layout = html.Div(
         ),
         html.Hr(),
         html.H2(
-            "Appartement prices evolution",
+            "Appartement prices evolution:",
             style={"color": "white", "fontSize": "40px", "fontWeight": "bold"},
         ),
         html.Div(
@@ -586,36 +618,52 @@ app.layout = html.Div(
                                         y=appartement_line["valeur_fonciere"],
                                         mode="lines",
                                         name="Valeur fonciere",
-                                    )
+                                        yaxis="y1",  # Assign to the primary y-axis
+                                    ),
+      go.Scatter(
+            x=appartement_line["date_mutation"],
+            y=appartement_line["count"],
+            mode="lines",
+            name="Number of sales",
+            yaxis="y2",  # Assign to the secondary y-axis
+        ),
                                 ],
                                 "layout": go.Layout(
                                     title={
-                                        "text": "Average total selling price of appartements per month",
+                                        "text": "Average total selling price of houses per month",
                                         "font": {
                                             "color": "white",
                                             "size": 40,
                                         },  # Set title font color to white
                                     },
-                                    paper_bgcolor="#1F2630",
-                                    plot_bgcolor="#252E3F",
-                                    xaxis=dict(
-                                        title="Date mutation",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
-                                        gridcolor="#444",
-                                        zerolinecolor="#444",
-                                        zerolinewidth=500,
-                                        zeroline=False,
-                                    ),
-                                    yaxis=dict(
-                                        title="Valeur fonciere",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
-                                        gridcolor="#444",
-                                        zerolinecolor="#444",
-                                        zerolinewidth=500,
-                                        zeroline=False,
-                                    ),
+                                     paper_bgcolor="#1F2630",
+        plot_bgcolor="#252E3F",
+        xaxis=dict(
+            title="Date mutation",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+        ),
+        yaxis=dict(
+            title="Valeur fonciere",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+        ),
+        yaxis2=dict(
+            title="Counts",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+            overlaying="y",  # Overlay on the same plot
+            side="right",  # Place on the right side
+        ),
                                     # margin={"r": 0, "t": 0, "l": 0, "b": 0},
                                 ),
                             },
@@ -814,7 +862,7 @@ app.layout = html.Div(
         ),
         html.Hr(),
         html.H2(
-            "Commercial lots prices evolution",
+            "Commercial lots prices evolution:",
             style={"color": "white", "fontSize": "40px", "fontWeight": "bold"},
         ),
         html.Div(
@@ -830,36 +878,52 @@ app.layout = html.Div(
                                         y=commercial_line["valeur_fonciere"],
                                         mode="lines",
                                         name="Valeur fonciere",
-                                    )
+                                    ),
+        go.Scatter(
+            x=appartement_line["date_mutation"],
+            y=appartement_line["count"],
+            mode="lines",
+            name="Number of sales",
+            yaxis="y2",  # Assign to the secondary y-axis
+        ),
                                 ],
                                 "layout": go.Layout(
                                     title={
-                                        "text": "Average total selling price per month",
+                                        "text": "Average total selling price of houses per month",
                                         "font": {
                                             "color": "white",
                                             "size": 40,
                                         },  # Set title font color to white
                                     },
-                                    paper_bgcolor="#1F2630",
-                                    plot_bgcolor="#252E3F",
-                                    xaxis=dict(
-                                        title="Date mutation",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
-                                        gridcolor="#444",
-                                        zerolinecolor="#444",
-                                        zerolinewidth=500,
-                                        zeroline=False,
-                                    ),
-                                    yaxis=dict(
-                                        title="Valeur fonciere",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
-                                        gridcolor="#444",
-                                        zerolinecolor="#444",
-                                        zerolinewidth=500,
-                                        zeroline=False,
-                                    ),
+                                     paper_bgcolor="#1F2630",
+        plot_bgcolor="#252E3F",
+        xaxis=dict(
+            title="Date mutation",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+        ),
+        yaxis=dict(
+            title="Valeur fonciere",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+        ),
+        yaxis2=dict(
+            title="Counts",
+            titlefont=dict(color="white"),
+            tickfont=dict(color="white"),
+            gridcolor="#444",
+            zerolinecolor="#444",
+            zeroline=False,
+            overlaying="y",  # Overlay on the same plot
+            side="right",  # Place on the right side
+        ),
+                                    # margin={"r": 0, "t": 0, "l": 0, "b": 0},
                                 ),
                             },
                             config={"displayModeBar": "hover"},
