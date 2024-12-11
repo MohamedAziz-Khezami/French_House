@@ -1,10 +1,10 @@
 
 # 🇫🇷 French House
----
-This project aims to study and predict the prices of houses in France based on the location, Surface, number of rooms, and type of the house.
-The regression model which is a LightGBM regressor, was trained on a 11 Million rows of data to deliver the most precise predictions.
 
----
+This project focuses on analyzing and predicting house prices across France using key features such as location, surface area, number of rooms, and type of house.
+To achieve high accuracy, we utilized a LightGBM Regressor, trained on an extensive dataset of 11 million records. This ensures precise and reliable predictions, making the model highly effective for real-world applications.
+
+
 
 ## Used Libraries
 
