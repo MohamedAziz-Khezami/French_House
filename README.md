@@ -60,3 +60,15 @@ Then go to `http://127.0.0.1:8050/`. You should be able to see the app running.
 
 ## Screenshots
 
+
+
+
+
+
+
+
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at mohamedazizkhezami@gmail.com
