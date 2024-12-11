@@ -60,10 +60,17 @@ Then go to `http://127.0.0.1:8050/`. You should be able to see the app running.
 
 ## Screenshots
 
+![Screenshot from 2024-12-11 08-58-15](https://github.com/user-attachments/assets/f24440f3-944b-4b69-8474-56b06baf3a18)
 
+![Screenshot from 2024-12-11 08-51-34](https://github.com/user-attachments/assets/c73fc503-16c0-4d0e-a3d9-d4fca0d57183)
 
+![Screenshot from 2024-12-11 08-49-21](https://github.com/user-attachments/assets/3d45fd24-d258-4e32-9df6-447b26e40fb1)
 
+![Screenshot from 2024-12-11 08-49-45](https://github.com/user-attachments/assets/d80ed00c-e173-411b-8f9b-4db56fe8a1f2)
 
+![Screenshot from 2024-12-11 08-49-58](https://github.com/user-attachments/assets/7c25f84c-4002-46a4-93fa-c619080c34f0)
+
+![Screenshot from 2024-12-11 08-50-09](https://github.com/user-attachments/assets/efc1c175-cb53-43ff-bc77-dba658b411c8)
 
 
 
