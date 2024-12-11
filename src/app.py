@@ -1244,7 +1244,7 @@ def update_chloropleth_map(selected_commune):
             geojson_data = json.load(f)
 
         locations = "code_departement"
-        hover_name = "valeur_fonciere"
+        hover_name = "departmentName"
         zoom = 4.5
         mapbox_style = "carto-darkmatter"
         opacity = 1
@@ -1292,4 +1292,4 @@ def update_chloropleth_map(selected_commune):
 
 # App running
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8050)
+    app.run_server(debug=False, port=8050)
