@@ -30,25 +30,25 @@ mapbox_access_token = "pk.eyJ1IjoiamFja3AiLCJhIjoidGpzN0lXVSJ9.7YK6eRwUNFwd3ODZf
 
 
 # Database connection
-df = pd.read_csv("datasets/linechart.csv")
-hbar = pd.read_csv("datasets/hbar.csv").iloc[:10, :]
-histo = pd.read_csv("datasets/histogram.csv")
+df = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/linechart.csv")
+hbar = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/hbar.csv").iloc[:10, :]
+histo = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/histogram.csv")
 
 
-appartement_bar = pd.read_csv("datasets/appartement_bar.csv").sort_values(
+appartement_bar = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/appartement_bar.csv").sort_values(
     by="valeur_fonciere", ascending=True
 )
-appartement_line = pd.read_csv("datasets/appartement_line.csv")
+appartement_line = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/appartement_line.csv")
 
-commercial_bar = pd.read_csv("datasets/commercial_bar.csv").sort_values(
+commercial_bar = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/commercial_bar.csv").sort_values(
     by="valeur_fonciere", ascending=True
 )
-commercial_line = pd.read_csv("datasets/commercial_line.csv")
+commercial_line = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/commercial_line.csv")
 
-maison_bar = pd.read_csv("datasets/maison_bar.csv").sort_values(
+maison_bar = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/maison_bar.csv").sort_values(
     by="valeur_fonciere", ascending=True
 )
-maison_line = pd.read_csv("datasets/maison_line.csv")
+maison_line = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/maison_line.csv")
 
 
 # avg total price per month line chart
@@ -77,17 +77,19 @@ line_chart = {
         paper_bgcolor="#1F2630",
         plot_bgcolor="#252E3F",
         xaxis=dict(
-            title="Date mutation",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
+            title=dict(
+                text="Date mutation",
+                font=dict(color="white")
+            ),
             gridcolor="#444",
             zerolinecolor="#444",
             zeroline=False,
         ),
         yaxis=dict(
-            title="Valeur fonciere",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
+            title=dict(
+                text="Valeur fonciere",
+                font=dict(color="white")
+            ),
             gridcolor="#444",
             zerolinecolor="#444",
             zeroline=False,
@@ -95,7 +97,7 @@ line_chart = {
         yaxis2=dict(
             title="Counts",
             titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
+
             gridcolor="#444",
             zerolinecolor="#444",
             zeroline=False,
@@ -143,18 +145,20 @@ histogram = {
         paper_bgcolor="#1F2630",
         plot_bgcolor="#252E3F",
         xaxis=dict(
-            title="Date",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
+            title=dict(
+                text="Date",
+                font=dict(color="white")
+            ),
             gridcolor="#444",
             zerolinecolor="#444",
             zerolinewidth=1,
             zeroline=False,
         ),
         yaxis=dict(
-            title="Valeur Foncière",
-            titlefont=dict(color="white"),
-            tickfont=dict(color="white"),
+            title=dict(
+                text="Valeur Foncière",
+                font=dict(color="white")
+            ),
             gridcolor="#444",
             zerolinecolor="#444",
             zerolinewidth=1,
@@ -378,25 +382,28 @@ app.layout = html.Div(
                                     paper_bgcolor="#1F2630",
                                     plot_bgcolor="#252E3F",
                                     xaxis=dict(
-                                        title="Date mutation",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Date mutation",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
                                     ),
                                     yaxis=dict(
-                                        title="Valeur fonciere",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Valeur fonciere",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
                                     ),
                                     yaxis2=dict(
-                                        title="Counts",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Counts",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
@@ -438,17 +445,20 @@ app.layout = html.Div(
                                     paper_bgcolor="#1F2630",
                                     plot_bgcolor="#252E3F",
                                     xaxis=dict(
-                                        title="Average Price",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Average Price",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zerolinewidth=1,
                                         zeroline=False,
                                     ),
                                     yaxis=dict(
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Department",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zerolinewidth=1,
@@ -642,25 +652,28 @@ app.layout = html.Div(
                                     paper_bgcolor="#1F2630",
                                     plot_bgcolor="#252E3F",
                                     xaxis=dict(
-                                        title="Date mutation",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Date mutation",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
                                     ),
                                     yaxis=dict(
-                                        title="Valeur fonciere",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Valeur fonciere",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
                                     ),
                                     yaxis2=dict(
-                                        title="Counts",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Counts",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
@@ -702,17 +715,20 @@ app.layout = html.Div(
                                     paper_bgcolor="#1F2630",
                                     plot_bgcolor="#252E3F",
                                     xaxis=dict(
-                                        title="Average Price",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Average Price",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zerolinewidth=1,
                                         zeroline=False,
                                     ),
                                     yaxis=dict(
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Department",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zerolinewidth=1,
@@ -905,25 +921,28 @@ app.layout = html.Div(
                                     paper_bgcolor="#1F2630",
                                     plot_bgcolor="#252E3F",
                                     xaxis=dict(
-                                        title="Date mutation",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Date mutation",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
                                     ),
                                     yaxis=dict(
-                                        title="Valeur fonciere",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Valeur fonciere",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
                                     ),
                                     yaxis2=dict(
-                                        title="Counts",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Counts",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zeroline=False,
@@ -965,17 +984,20 @@ app.layout = html.Div(
                                     paper_bgcolor="#1F2630",
                                     plot_bgcolor="#252E3F",
                                     xaxis=dict(
-                                        title="Average Price",
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Average Price",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zerolinewidth=1,
                                         zeroline=False,
                                     ),
                                     yaxis=dict(
-                                        titlefont=dict(color="white"),
-                                        tickfont=dict(color="white"),
+                                        title=dict(
+                                            text="Department",
+                                            font=dict(color="white")
+                                        ),
                                         gridcolor="#444",
                                         zerolinecolor="#444",
                                         zerolinewidth=1,
@@ -1201,7 +1223,7 @@ def predict(address, surface, rooms, type, n_clicks):
 
             from joblib import load
 
-            model = load("model/lgbm_model_250_mse.pkl")
+            model = load("/Users/mak/Desktop/frenchH/French_House/model/lgbm_model_250_mse.pkl")
 
             to_pred = [place["lon"], place["lat"], type, rooms, surface]
 
@@ -1228,8 +1250,8 @@ def predict(address, surface, rooms, type, n_clicks):
 )
 def update_chloropleth_map(selected_commune):
     if selected_commune == "commune":
-        mb = pd.read_csv("datasets/df_t_comm.csv")
-        with open("datasets/communes.geojson") as f:
+        mb = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/df_t_comm.csv")
+        with open("/Users/mak/Desktop/frenchH/French_House/datasets/communes.geojson") as f:
             geojson_data = json.load(f)
         locations = "code"
         hover_name = "nom_commune"
@@ -1239,8 +1261,8 @@ def update_chloropleth_map(selected_commune):
         center = {"lat": 46.2276, "lon": 2.2137}
 
     elif selected_commune == "departement":
-        mb = pd.read_csv("datasets/mapy.csv")
-        with open("datasets/geojsfile.json") as f:
+        mb = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/mapy.csv")
+        with open("/Users/mak/Desktop/frenchH/French_House/datasets/geojsfile.json") as f:
             geojson_data = json.load(f)
 
         locations = "code_departement"
@@ -1251,8 +1273,8 @@ def update_chloropleth_map(selected_commune):
         center = {"lat": 46.2276, "lon": 2.2137}
 
     elif selected_commune == "street":
-        mb = pd.read_csv("datasets/mapy.csv")
-        with open("datasets/geojsfile.json") as f:
+        mb = pd.read_csv("/Users/mak/Desktop/frenchH/French_House/datasets/mapy.csv")
+        with open("/Users/mak/Desktop/frenchH/French_House/datasets/geojsfile.json") as f:
             geojson_data = json.load(f)
 
         locations = "code_departement"
@@ -1292,4 +1314,4 @@ def update_chloropleth_map(selected_commune):
 
 # App running
 if __name__ == "__main__":
-    app.run_server(debug=False, port=8050)
+    app.run(debug=False, port=8050)
